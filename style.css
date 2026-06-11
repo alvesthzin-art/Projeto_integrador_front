@@ -3,31 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+/*********Tela inicial**************/
 body{
-    background-color: #fbecd3;
-}
+    height: 1920px ;
+    background-color:#000000d9;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-style: inherit;
+    width: 100%; 
+    position: relative; 
+    z-index: -999;
+     background-image: url('https://res.cloudinary.com/dps7dz75i/image/upload/v1781186854/ChatGPT_Image_11_de_jun._de_2026_10_51_19_mnizmp.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+ }
+/* .background-image{
+    display: flex;
+    width: 100%; 
+    position: relative; 
+    z-index: -999;
+    background-image: url('img/bkg.img.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+} */
+
 .logo{
     margin-top: -40px;
     height: 250px;
     display: flex;
-    position: absolute;
+    
     padding-left: 1200px;
 
 }
-.banner-container img {
-    padding-left: 300px;
-    padding-top: 135px;
-    transition: transform 0.3s ease;
-    width: 90%; 
-}
 
-.banner-container img:hover {
-    transform: scale(1.2); 
-}
 .pesquisa-container{
     
     display: flex;
-    position: absolute;
     padding-left: 1000px;
 
 }
