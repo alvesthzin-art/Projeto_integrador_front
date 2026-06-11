@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fbecd3;
+}
+.logo{
+    margin-top: -40px;
+    height: 250px;
+    display: flex;
+    position: absolute;
+    padding-left: 1200px;
+
+}
+.banner-container img {
+    padding-left: 300px;
+    padding-top: 135px;
+    transition: transform 0.3s ease;
+    width: 90%; 
+}
+
+.banner-container img:hover {
+    transform: scale(1.2); 
+}
+.pesquisa-container{
+    display: flex;
+    padding-left: 100px;
+    
+}
+
+  
