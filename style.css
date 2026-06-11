@@ -25,9 +25,11 @@ body{
     transform: scale(1.2); 
 }
 .pesquisa-container{
-    display: flex;
-    padding-left: 100px;
     
+    display: flex;
+    position: absolute;
+    padding-left: 1000px;
+
 }
 
   
