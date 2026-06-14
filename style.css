@@ -1,4 +1,4 @@
-/* Reset total */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -75,4 +75,170 @@ body {
     cursor: pointer;
     font-size: 15px;
     color: #3e2723;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+    flex: 1;
+    width: 100%;
+    padding: 10px 50px;
+}
+
+/* Retângulo discreto em volta do banner */
+.hero-banner {
+    width: 100%;
+    max-width: 950px; 
+    display: flex;
+    justify-content: center;
+}
+
+.banner-moldura {
+    background-color: rgba(245, 237, 214, 0.4); 
+    border: 1px solid rgba(197, 184, 151, 0.6);
+    border-radius: 16px;
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Seção de Destaques */
+.destaques {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.destaques h2 {
+    font-size: 1.8em;
+    color: #3e2723;
+    margin-bottom: 15px;
+}
+
+.destaques .ornamento {
+    color: #c5b897;
+}
+
+/* Grade que segura os doces */
+.produtos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Card de cada Doce */
+.product-card {
+    background-color: #f5edd6;
+    border: 1px solid #c5b897;
+    border-radius: 12px;
+    width: 210px; 
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 10px;
+}
+
+.card-info h3 {
+    font-size: 1.1em;
+    color: #3e2723;
+    margin-bottom: 3px;
+}
+
+.card-info p {
+    color: #8d6e63;
+    font-size: 0.9em;
+}
+
+/* --- RODAPÉ ESTILIZADO COM LOGO E EFEITO DE MEL --- */
+.footer-link {
+    text-decoration: none;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.footer {
+    background-color: #23120f; /* Cor marrom idêntica à imagem de referência */
+    color: #f5edd6;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Criação do efeito do mel escorrendo integrado diretamente por cima da borda do rodapé */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -12px; /* Faz o mel subir um pouco para sobrepor o fundo */
+    left: 10px;  /* Alinha com a textura da sua imagem de fundo no canto esquerdo */
+    width: 140px;
+    height: 15px;
+    /* Usa a mesma imagem de fundo apenas no pedacinho do mel escorrendo */
+    background-image: url('https://res.cloudinary.com/dps7dz75i/image/upload/v1781449554/Fundo_HoneyDukes_hk0iuv.png');
+    background-position: left bottom;
+    background-size: 1200px; /* Mantém a proporção do mel visível */
+    background-repeat: no-repeat;
+    z-index: 11;
+    pointer-events: none;
+}
+
+/* Container interno para organizar os elementos no espaço */
+.footer-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+}
+
+/* Envoltório da Logo alinhado à esquerda */
+.footer-logo-box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 30px;
+}
+
+.footer-logo-box img {
+    height: 35px; /* Tamanho discreto para caber na faixa do rodapé */
+    width: auto;
+    filter: brightness(0.9); /* Mescla melhor com o fundo escuro */
+}
+
+/* Texto perfeitamente centralizado no meio da tela */
+.footer-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+.footer-text p {
+    color: #f5edd6;
+}
+
+.footer-text .tagline {
+    margin-left: 15px;
+    color: #c5b897;
 }
