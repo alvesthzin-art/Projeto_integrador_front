@@ -26,6 +26,7 @@ main{
     width: 100%;
 
 }
+
 header {
     
     /* background-color: var(--cream-vanilla); */
@@ -155,6 +156,89 @@ body{
     background-repeat: no-repeat; 
     background-attachment: fixed;
  }
+
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 250px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+    filter: grayscale(20%);
+}
+.estrelas{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.fas { 
+    display: flex;
+    color: #FFD700;
+    width: 10px;
+ }
+ .imagenario {
+    
+     display: flex;
+     object-fit: cover;
+     object-position: top;
+ }
+ .imgProduct{
+    width: 230px;
+    height: 200px;
+    display: flex;
+     object-fit: cover;
+     object-position: top;
+ }
+
+.card img {
+    width: 230px;
+    
+    object-fit: cover;
+    border-radius: 5% / 5%;
+    
+}
+
+.card:hover {
+    filter: grayscale(0);
+    margin: 0px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.24);
+}
+
+.card-info {
+    text-align: start;
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.card-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.card-info span {
+    font-size: 0.85rem;
+    color: #666;
+}
  .logo-footer{
     display: flex;
     height: 5vh;;
