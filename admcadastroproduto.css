@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --amber: #D4860A;
+    --amber-light: #F5C868;
+    --amber-hover: #B8720A;
+    --cream: #FDF5E4;
+    --sidebar-bg: #1C1C1A;
+    --sidebar-text: #E8D8B0;
+    --sidebar-active: #F5C868;
+    --white: #FFFFFF;
+    --text-dark: #1A1814;
+    --text-mid: #5C5243;
+    --text-light: #9A8A76;
+    --border: #E6D9C5;
+    --error: #C0392B;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-card: 0 2px 16px rgba(80, 50, 10, .08);
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: var(--font);
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    padding: 32px 12px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, .07);
+    color: var(--sidebar-active);
+}
+
+.nav-item.active {
+    background: rgba(212, 134, 10, .18);
+    color: var(--sidebar-active);
+}
+
+.nav-item svg {
+    flex-shrink: 0;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 0 32px 48px;
+    background: var(--cream);
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    cursor: pointer;
+    color: var(--text-dark);
+    flex-shrink: 0;
+    margin-top: 4px;
+    transition: border-color .15s, box-shadow .15s;
+}

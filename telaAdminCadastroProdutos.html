@@ -1,9 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novo Produto — Doceria</title>
-  <link rel="stylesheet" href="./admcadastroproduto.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novo Produto — Doceria</title>
+    <link rel="stylesheet" href="./admcadastroproduto.css" />
 </head>
+
 <body>
+
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item" id="nav-produtos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="1.8" viewBox="0 0 24 24">
+                    <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+                Produtos
+            </a>
+            <a href="#" class="nav-item active" id="nav-adicionar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="1.8" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+                Adicionar produto
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div class="topbar-user">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="1.8" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Administrador</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </div>
+        </header>
+
+        <div class="page-header">
+            <button class="btn-back" onclick="handleVoltar()" aria-label="Voltar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="2.2" viewBox="0 0 24 24">
+                    <line x1="19" y1="12" x2="5" y2="12" />
+                    <polyline points="12 19 5 12 12 5" />
+                </svg>
+            </button>
+            <div>
+                <h1 class="page-title">Novo Produto</h1>
+                <p class="page-sub">Preencha as informações do produto da doceria.</p>
+            </div>
+        </div>
+
+        <div class="form-left">
+            <div class="field-group">
+                <label class="field-label" for="nome">Nome do Produto <span class="required">*</span></label>
+                <input class="field-input" id="nome" type="text" placeholder="Digite o nome do produto" />
+                <span class="field-error" id="erro-nome"></span>
+              </div>
+        </div>
