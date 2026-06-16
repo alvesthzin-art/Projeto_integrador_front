@@ -1,0 +1,203 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0e6d0;
+    gap: 28px;
+}
+
+/* ── Logo ── */
+.logo img {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+}
+
+/* ── Card de login ── */
+.login-card {
+    background-color: #faf6ee;
+    border-radius: 18px;
+    padding: 44px 48px 40px;
+    width: 100%;
+    max-width: 430px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.login-card h1 {
+    font-size: 1.55em;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* ── Campos ── */
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-grupo label {
+    font-size: 0.88em;
+    color: #3e2723;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.campo-input {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #d4c9b0;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    gap: 10px;
+}
+
+.campo-input:focus-within {
+    border-color: #b8860b;
+    box-shadow: 0 0 0 3px rgba(184,134,11,0.15);
+}
+
+.campo-input i {
+    color: #8d6e63;
+    font-size: 0.95em;
+    flex-shrink: 0;
+}
+
+.campo-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 11px 0;
+    font-size: 0.92em;
+    color: #3e2723;
+    font-family: inherit;
+}
+
+.campo-input input::placeholder {
+    color: #bbb0a0;
+}
+
+.toggle-senha {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8d6e63;
+    font-size: 0.95em;
+    padding: 0;
+    flex-shrink: 0;
+    transition: color 0.2s;
+}
+
+.toggle-senha:hover {
+    color: #3e2723;
+}
+
+/* ── Esqueceu senha ── */
+.esqueceu {
+    text-align: right;
+    margin-top: -10px;
+}
+
+.esqueceu a {
+    font-size: 0.82em;
+    color: #b8860b;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.esqueceu a:hover {
+    color: #8B6914;
+    text-decoration: underline;
+}
+
+/* ── Botão Entrar com mel escorrendo ── */
+.btn-entrar-wrap {
+    position: relative;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(180deg, #d4870a 0%, #b36800 60%, #9a5800 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(184,134,11,0.35);
+}
+
+.btn-entrar:hover {
+    background: linear-gradient(180deg, #c07a08 0%, #a05c00 60%, #8a4e00 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(184,134,11,0.4);
+}
+
+.btn-entrar:active {
+    transform: translateY(0);
+}
+
+/* Mel escorrendo embaixo do botão */
+.mel-drip {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* SVG inline de gotas de mel */
+.mel-drip svg {
+    width: 100%;
+    height: 36px;
+    overflow: visible;
+}
+
+/* ── Voltar ── */
+.link-voltar {
+    text-align: center;
+    font-size: 0.82em;
+}
+
+.link-voltar a {
+    color: #8d6e63;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-voltar a:hover {
+    color: #3e2723;
+}

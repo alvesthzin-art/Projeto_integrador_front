@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>HoneyDukes - Login Administrador</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://res.cloudinary.com/dps7dz75i/image/upload/v1781273395/ChatGPT_Image_12_de_jun._de_2026_08_35_04_cl5vwt.png" alt="HoneyDukes">
+    </div>
+
+    <div class="login-card">
+        <h1>Bem-vindo a area de administrator!</h1>
+
+        <div class="campos">
+            <div class="campo-grupo">
+                <label for="email">E-mail</label>
+                <div class="campo-input">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" autocomplete="email">
+                </div>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="senha">Senha</label>
+                <div class="campo-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
+                    <button class="toggle-senha" type="button" onclick="toggleSenha()" aria-label="Mostrar senha">
+                        <i class="fas fa-eye" id="icone-olho"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="esqueceu">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+        </div>
+
+        <div class="btn-entrar-wrap">
+            <button class="btn-entrar" onclick="fazerLogin()">Entrar</button>
+            
+            <div class="mel-drip">
+                <svg viewBox="0 0 300 22" xmlns="http://www.w3.org/2000/svg">
+                    
+                </svg>
+            </div>
+        </div>
+
+        <div class="link-voltar">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Voltar para a loja</a>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
