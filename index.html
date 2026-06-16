@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HoneyDukes - Doces Mágicos</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header class="header">
         <div class="nav-left">
             <a href="catalogo.html" class="nav-link">
-                <i class="fas fa-book-open"></i>
+                <i class="fas fa-book"></i>
                 <span>Catálogo</span>
             </a>
         </div>
@@ -23,11 +23,13 @@
 
         <div class="nav-right">
             <form action="/buscar" method="GET" class="pesquisa-form">
-                <input type="text" placeholder="Buscar produtos..." name="pesquisa">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar produtos..." name="pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
             </form>
             <a href="admin.html" class="admin-area">
-                <i class="fas fa-user-circle"></i>
+                <i class="fas fa-user"></i>
                 <span>Área do Administrador</span>
             </a>
         </div>

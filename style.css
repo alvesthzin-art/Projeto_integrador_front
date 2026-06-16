@@ -40,7 +40,7 @@ body {
     flex-shrink: 0;
 }
 
-/* Navegação esquerda */
+/* Catálogo */
 .nav-link {
     display: flex;
     align-items: center;
@@ -56,15 +56,15 @@ body {
     color: #c5b897;
 }
 
-/* Logo central */
+/* Logo HoneyDukes */
 .logo img {
-    height: 105px;
+    height: 155px;
     width: auto;
     transform: translateY(8px);
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
 }
 
-/* Direita: pesquisa + admin */
+/* Pesquisa + admin */
 .nav-right {
     display: flex;
     align-items: center;
@@ -143,6 +143,29 @@ body {
 .admin-area i {
     font-size: 17px;
 }
+.header i {
+    display: inline-block;
+    color: #4a2f13;
+    font-size: 18px; 
+    vertical-align: middle;
+}
+
+.nav-link i, .admin-area i {
+    margin-right: 8px;
+}
+
+/* Caixa da barra de busca */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+}
 
 /* MAIN CONTENT */
 .main-content {
@@ -156,10 +179,10 @@ body {
     min-height: 0;
 }
 
-/* HERO BANNER*/
+/*  BANNER*/
 .hero-banner {
-    width: 100%;
-    max-width: 980px;
+    width: 1250px;
+    max-width: auto;
     display: flex;
     justify-content: center;
 }
