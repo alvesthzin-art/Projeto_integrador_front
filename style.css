@@ -61,7 +61,7 @@ body {
 
 /* Logo central */
 .logo img {
-    height: 105px;
+    height: 155px;
     width: auto;
     transform: translateY(8px);
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
@@ -161,8 +161,8 @@ body {
 
 /* HERO BANNER*/
 .hero-banner {
-    width: 100%;
-    max-width: 980px;
+    width: 1500px;
+    max-width: auto;
     display: flex;
     justify-content: center;
 }
@@ -282,18 +282,9 @@ body {
     padding: 0 30px;
     position: relative;
 }
-
-.footer-logo-box {
-    position: absolute;
-    left: 30px;
-    display: flex;
-    align-items: center;
-}
-
 .footer-logo-box img {
-    height: 32px;
+    height: 50px;
     width: auto;
-    filter: brightness(0.9);
 }
 
 .footer-text {
