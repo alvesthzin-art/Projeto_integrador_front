@@ -7,7 +7,7 @@ const ENDPOINTS = {
   cadastrarProduto: `${API_BASE_URL}/produtos`,
 };
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsImlhdCI6MTc4MTc4NTgyMCwiZXhwIjoxNzgxNzg5NDIwfQ.BKrkFXcmhjRo1TKiBj5jHuziOPohC8hLQYoEyxkkXeQ";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsImlhdCI6MTc4MTc4OTc5NywiZXhwIjoxNzgxNzkzMzk3fQ.lcxpvYNDH8aTyzxAxBceEuCrku4QTbpIJUinHwpuXtQ";
 
 const CLOUD_NAME    = "dlb0dkfbs";
 const UPLOAD_PRESET = "honeyduke_preset";
@@ -181,6 +181,7 @@ botaoCancelar.addEventListener("click", () => {
 form.addEventListener("submit", async (evento) => {
   evento.preventDefault();
 
+  console.log("Categorias:", Array.from(selectCategoria.selectedOptions).map(op => op.value));
   let imagem_url = null;
 
   if (arquivoSelecionado) {
