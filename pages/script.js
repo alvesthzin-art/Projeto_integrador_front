@@ -1,96 +1,67 @@
 const API_BASE_URL = "http://localhost:8080/v1/senai/admin";
 
 const ENDPOINTS = {
-  categorias: `${API_BASE_URL}/categoria`,   // GET '/' do categoria.routes.js
-  tamanhos: `${API_BASE_URL}/tamanho`,       // GET '/' do tamanho.routes.js
-  cadastrarProduto: `${API_BASE_URL}/produtos`, // POST '/' do produto.routes.js
+  categorias:      `${API_BASE_URL}/categoria`,
+  tamanhos:        `${API_BASE_URL}/tamanho`,
+  tiposProduto:    `${API_BASE_URL}/tipo-produto`,
+  cadastrarProduto:`${API_BASE_URL}/produtos`,
 };
 
-const form = document.getElementById("form-novo-produto");
-const selectCategoria = document.getElementById("categoria");
-const selectTamanho = document.getElementById("tamanho");
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsImlhdCI6MTc4MTc4NTgyMCwiZXhwIjoxNzgxNzg5NDIwfQ.BKrkFXcmhjRo1TKiBj5jHuziOPohC8hLQYoEyxkkXeQ";
 
-const areaUpload = document.getElementById("area-upload");
-const inputImagem = document.getElementById("imagem");
+const form             = document.getElementById("form-novo-produto");
+const selectCategoria  = document.getElementById("categoria");
+const selectTamanho    = document.getElementById("tamanho");
+const selectTipoProduto= document.getElementById("tipo_produto");
+
+const areaUpload     = document.getElementById("area-upload");
+const inputImagem    = document.getElementById("imagem");
 const uploadConteudo = document.getElementById("upload-conteudo");
-const previewImagem = document.getElementById("preview-imagem");
-
-const botaoCancelar = document.getElementById("botao-cancelar");
+const previewImagem  = document.getElementById("preview-imagem");
+const botaoCancelar  = document.getElementById("botao-cancelar");
 
 document.addEventListener("DOMContentLoaded", () => {
   carregarCategorias();
   carregarTamanhos();
+  carregarTiposProduto();
 });
 
+// ── Helpers ──────────────────────────────────────────────
+
 function extrairArray(resposta) {
-  if (Array.isArray(resposta)) {
-    return resposta;
-  }
+  if (Array.isArray(resposta)) return resposta;
 
   const dados = resposta.response || resposta;
 
-  const chavesPossiveis = ["categorias", "tamanhos", "produtos", "sabores", "data", "dados", "itens", "resultado"];
+  const chavesPossiveis = [
+    "categorias", "tamanhos", "tipos", "tipo_produto", "tiposProduto",
+    "produtos", "sabores", "data", "dados", "itens", "resultado",
+  ];
 
   for (const chave of chavesPossiveis) {
-    if (Array.isArray(dados[chave])) {
-      return dados[chave];
-    }
+    if (Array.isArray(dados[chave])) return dados[chave];
   }
 
   for (const chave in dados) {
-    if (Array.isArray(dados[chave])) {
-      return dados[chave];
-    }
+    if (Array.isArray(dados[chave])) return dados[chave];
   }
 
   console.warn("Não encontrei um array na resposta. Formato recebido:", resposta);
   return [];
 }
 
-async function carregarCategorias() {
-  try {
-    const resposta = await fetch(ENDPOINTS.categorias);
+async function buscarComToken(url) {
+  const resposta = await fetch(url, {
+    headers: { "x-access-token": token },
+  });
 
-    if (!resposta.ok) {
-      throw new Error("Não foi possível carregar as categorias.");
-    }
-
-    const categorias = await resposta.json();
-
-    console.log("Resposta da API de categorias:", categorias);
-
-    // Categoria usa o campo "nome" -> ex.: "chocolates"
-    preencherSelect(selectCategoria, extrairArray(categorias), (item) => item.nome);
-  } catch (erro) {
-    console.error("Erro ao carregar categorias:", erro);
+  if (!resposta.ok) {
+    throw new Error(`Erro ao buscar ${url}: ${resposta.status}`);
   }
+
+  return resposta.json();
 }
 
-async function carregarTamanhos() {
-  try {
-    const resposta = await fetch(ENDPOINTS.tamanhos);
-
-    if (!resposta.ok) {
-      throw new Error("Não foi possível carregar os tamanhos.");
-    }
-
-    const tamanhos = await resposta.json();
-
-    console.log("Resposta da API de tamanhos:", tamanhos);
-
-    preencherSelect(selectTamanho, extrairArray(tamanhos), (item) => `${item.tamanho} - ${item.medida}`);
-  } catch (erro) {
-    console.error("Erro ao carregar tamanhos:", erro);
-  }
-}
-
-/* =========================================================
-   FUNÇÃO AUXILIAR: preencherSelect
-   Recebe um <select>, a lista de itens e uma função que diz
-   qual texto mostrar em cada <option> (porque cada tabela usa
-   um nome de campo diferente: categoria usa "nome", tamanho
-   usa "tamanho" + "medida").
-========================================================= */
 function preencherSelect(selectElemento, itens, obterTexto) {
   itens.forEach((item) => {
     const option = document.createElement("option");
@@ -100,15 +71,45 @@ function preencherSelect(selectElemento, itens, obterTexto) {
   });
 }
 
-areaUpload.addEventListener("click", () => {
-  inputImagem.click();
-});
+// ── Carregamentos ─────────────────────────────────────────
+
+async function carregarCategorias() {
+  try {
+    const categorias = await buscarComToken(ENDPOINTS.categorias);
+    console.log("Categorias:", categorias);
+    preencherSelect(selectCategoria, extrairArray(categorias), (item) => item.nome);
+  } catch (erro) {
+    console.error("Erro ao carregar categorias:", erro);
+  }
+}
+
+async function carregarTamanhos() {
+  try {
+    const tamanhos = await buscarComToken(ENDPOINTS.tamanhos);
+    console.log("Tamanhos:", tamanhos);
+    preencherSelect(selectTamanho, extrairArray(tamanhos), (item) => `${item.tamanho} - ${item.medida}`);
+  } catch (erro) {
+    console.error("Erro ao carregar tamanhos:", erro);
+  }
+}
+
+async function carregarTiposProduto() {
+  try {
+    const tipos = await buscarComToken(ENDPOINTS.tiposProduto);
+    console.log("Tipos de produto:", tipos);
+    preencherSelect(selectTipoProduto, extrairArray(tipos), (item) => item.tipo);
+  } catch (erro) {
+    console.error("Erro ao carregar tipos de produto:", erro);
+  }
+}
+
+// ── Upload de imagem ──────────────────────────────────────
+
+areaUpload.addEventListener("click", () => inputImagem.click());
 
 inputImagem.addEventListener("change", () => {
   const arquivo = inputImagem.files[0];
-  if (arquivo) {
-    mostrarPreview(arquivo);
-  }
+  if (arquivo) mostrarPreview(arquivo);
 });
 
 areaUpload.addEventListener("dragover", (evento) => {
@@ -123,7 +124,6 @@ areaUpload.addEventListener("dragleave", () => {
 areaUpload.addEventListener("drop", (evento) => {
   evento.preventDefault();
   areaUpload.style.borderColor = "#d8cdb8";
-
   const arquivo = evento.dataTransfer.files[0];
   if (arquivo) {
     inputImagem.files = evento.dataTransfer.files;
@@ -132,17 +132,17 @@ areaUpload.addEventListener("drop", (evento) => {
 });
 
 function mostrarPreview(arquivo) {
-    const leitor = new FileReader();
-    leitor.onload = (evento) => {
-      previewImagem.src = evento.target.result;
-      previewImagem.hidden = false;
-      uploadConteudo.hidden = true;
-  
-      // Preenche o campo imagem_url automaticamente com o base64
-      document.getElementById("imagem_url").value = evento.target.result;
-    };
-    leitor.readAsDataURL(arquivo);
-  }
+  const leitor = new FileReader();
+  leitor.onload = (evento) => {
+    previewImagem.src = evento.target.result;
+    previewImagem.hidden = false;
+    uploadConteudo.hidden = true;
+    document.getElementById("imagem_url").value = evento.target.result;
+  };
+  leitor.readAsDataURL(arquivo);
+}
+
+// ── Cancelar ──────────────────────────────────────────────
 
 botaoCancelar.addEventListener("click", () => {
   form.reset();
@@ -150,35 +150,34 @@ botaoCancelar.addEventListener("click", () => {
   uploadConteudo.hidden = false;
 });
 
+// ── Submit ────────────────────────────────────────────────
+
 form.addEventListener("submit", async (evento) => {
-    evento.preventDefault();
-  
-    const dadosProduto = {
-        nome:               document.getElementById("nome").value,
-        descricao:          document.getElementById("descricao").value,
-        quantidade_estoque: Number(document.getElementById("quantidade_estoque").value),
-        imagem_url:         document.getElementById("imagem_url").value,
-        unidade_produto:    Number(document.getElementById("unidade_produto").value),
-        quantidade_sabores: Number(document.getElementById("quantidade_sabores").value),
-        id_tamanho:         Number(selectTamanho.value),
-        id_tipo_produto:    Number(selectCategoria.value),
-      
-        // Array de objetos com id de cada categoria selecionada
-        categoria: Array.from(selectCategoria.selectedOptions).map(op => ({ id: Number(op.value) })),
-      };
-  
-    console.log("Enviando para API:", JSON.stringify(dadosProduto));
-    await adicionarProduto(dadosProduto);
-  });
+  evento.preventDefault();
+
+  const dadosProduto = {
+    nome:               document.getElementById("nome").value,
+    descricao:          document.getElementById("descricao").value,
+    quantidade_estoque: Number(document.getElementById("quantidade_estoque").value),
+    imagem_url:         document.getElementById("imagem_url").value,
+    unidade_produto:    Number(document.getElementById("unidade_produto").value),
+    quantidade_sabores: Number(document.getElementById("quantidade_sabores").value),
+    id_tamanho:         Number(selectTamanho.value),
+    id_tipo_produto:    Number(selectTipoProduto.value),  // <- select correto
+    categoria: Array.from(selectCategoria.selectedOptions).map((op) => ({ id: Number(op.value) })),
+  };
+
+  console.log("Enviando para API:", JSON.stringify(dadosProduto));
+  await adicionarProduto(dadosProduto);
+});
 
 async function adicionarProduto(dadosProduto) {
   try {
-    console.log("Enviando para API:", JSON.stringify(dadosProduto));
-
     const resposta = await fetch(ENDPOINTS.cadastrarProduto, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-access-token": token,
       },
       body: JSON.stringify(dadosProduto),
     });

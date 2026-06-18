@@ -58,12 +58,21 @@
                       placeholder="Descreva o produto" required></textarea>
           </div>
 
-          <!-- id_tipo_produto (categoria) -->
+          <!-- id_tipo_produto: select PRÓPRIO, separado da Categoria.
+               É preenchido pela função carregarTiposProduto() (GET em /tipo-produto) -->
+          <div class="campo">
+            <label for="tipo_produto">Tipo de Produto <span class="obrigatorio">*</span></label>
+            <select id="tipo_produto" name="tipo_produto" required>
+              <option value="">Selecione o tipo de produto</option>
+            </select>
+          </div>
+
+          <!-- categoria (relação muitos-para-muitos): select múltiplo,
+               preenchido pela função carregarCategorias() (GET em /categoria) -->
           <div class="campo">
             <label for="categoria">Categoria <span class="obrigatorio">*</span></label>
             <select id="categoria" name="categoria" multiple required>
-                <option value="">Selecione a categoria</option>
-              </select>
+            </select>
             <small class="dica">Segure Ctrl (ou Cmd no Mac) para selecionar mais de uma.</small>
           </div>
 
@@ -100,7 +109,7 @@
 
         </div>
 
-      
+        <!-- Coluna da direita: imagem -->
         <div class="coluna coluna-imagem">
           <label>Imagem do Produto <span class="obrigatorio">*</span></label>
 
@@ -118,8 +127,8 @@
                  alt="Pré-visualização da imagem do produto">
           </div>
 
-          <!-- imagem_url: preenchido automaticamente pelo JS após upload,
-               ou manualmente como fallback -->
+          <!-- imagem_url: preenchido automaticamente pelo JS após o upload
+               (em base64), ou colado manualmente como alternativa -->
           <div class="campo" style="margin-top: 16px;">
             <label for="imagem_url">URL da Imagem <span class="obrigatorio">*</span></label>
             <input type="text" id="imagem_url" name="imagem_url"
