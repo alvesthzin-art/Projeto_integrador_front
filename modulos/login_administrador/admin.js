@@ -1,6 +1,6 @@
 const USUARIO_TESTE = {
-    email: "admin@honeydukes.com",
-    senha: "123456",
+    email: "honetDukes@gmail.com",
+    senha: "honeyDukes123",
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsImlhdCI6MTc4MTc4NTQ4NCwiZXhwIjoxNzgxNzg1NTQ0fQ.oxMwyCP3gLRe6qOwhrBGMRei1kCeG8geVaojuyG7Wxc"
 };
 
@@ -39,7 +39,7 @@ async function fazerLogin() {
             console.log('Login de teste efetuado com sucesso!');
             
             // 🛠️ CORRIGIDO: Mudado de principal.html para index.html
-            window.location.href = '../tela_principal/index.html';
+            window.location.href = '../cadastrarProduto/index.html';
             return;
         }
 
@@ -62,7 +62,7 @@ async function fazerLogin() {
         salvarSessao(data.token);
         
         console.log('Login via API efetuado com sucesso!');
-        window.location.href = '../tela_principal/index.html';
+        window.location.href = '../cadastrarProduto/index.html';
 
     } catch (error) {
         console.error('Erro na autenticação:', error);
