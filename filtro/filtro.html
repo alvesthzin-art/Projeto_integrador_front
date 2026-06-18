@@ -8,18 +8,17 @@
     <title>Filtragem</title>
 </head>
 <body>
-    <div class="imagemFundo">
-        <img src="/img/Imagem de fundo - HoneyDukes.png" alt="Imagem de fundo">
-    </div>
 
     <header class="topo">
         <a href="#" class="catalogo">
             <i class="fa-solid fa-book-open"></i>
-            <span>Cat&aacute;logo</span>
+            <span>Catálogo</span>
         </a>
 
         <div class="logo">
-            <img src="/img/ChatGPT Image 12 de jun. de 2026, 08_35_04.png" alt="HoneyDukes">
+            <a href="#">
+                <img src="/img/ChatGPT Image 12 de jun. de 2026, 08_35_04.png" alt="HoneyDukes">
+            </a>
         </div>
 
         <div class="menuDireita">
@@ -35,7 +34,7 @@
 
             <a href="#" class="administrador">
                 <i class="fa-regular fa-user"></i>
-                <span>&Aacute;rea do Administrador</span>
+                <span>Área do Administrador</span>
             </a>
         </div>
     </header>
@@ -43,27 +42,39 @@
     <main>
         <div class="respostaFiltro">
             <div class="tituloGrande">
-                <h1>Resultados para &ldquo;chocolate&rdquo;</h1>
+                <span class="ornamento">{</span>
+                <h1>Resultados para “chocolate”</h1>
+                <span class="ornamento">}</span>
             </div>
             <div class="tituloPequeno">
                 <h5>6 produtos encontrados</h5>
             </div>
+        </div>
+
+        <section class="vitrine"></section>
+
+        <div class="paginacao">
+            <button class="btn-pag"><i class="fa-solid fa-chevron-left"></i></button>
+            <span class="num-pag ativa">1</span>
+            <button class="btn-pag"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </main>
 
     <footer>
         <div class="produtos">
             <div class="logoRodape">
-                <img src="/img/ChatGPT Image 12 de jun. de 2026, 08_35_04.png" alt="HoneyDukes">
-            </div>
-
-            <div class="abelha">
-                <img src="/img/bee.png" alt="">
-                <p>Feito com mel e magia</p>
+                <a href="#">
+                    <img src="/img/ChatGPT Image 12 de jun. de 2026, 08_35_04.png" alt="HoneyDukes">
+                </a>
             </div>
 
             <div class="centroBaixo">
                 <p>&copy; 2024 HoneyDukes - todos os direitos reservados.</p>
+            </div>
+
+            <div class="abelha">
+                <p>Feito com mel e magia</p>
+                <img src="/img/bee.png" alt="Abelha">
             </div>
         </div>
     </footer>
