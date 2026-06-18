@@ -1,0 +1,138 @@
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6ebd6; /* Tom creme do fundo idêntico à imagem */
+    gap: 35px;
+    padding: 20px;
+}
+
+/* ── Logo Superior ── */
+.logo img {
+    height: 120px; /* Logo um pouco mais imponente no topo */
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+}
+
+/* ── Card Centralizado ── */
+.recuperar-card {
+    background-color: #f7eedb; /* Cor sutil de fundo do card */
+    border-radius: 28px; /* Cantos bem arredondados como na imagem */
+    padding: 50px 55px;
+    width: 100%;
+    max-width: 500px; /* Card ligeiramente mais largo para o texto */
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06); /* Sombra suave de elevação */
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Título explicativo */
+.recuperar-card h1 {
+    font-size: 1.85em;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: left; /* Alinhado à esquerda conforme a imagem */
+    line-height: 1.25;
+}
+
+/* ── Input de E-mail ── */
+.campos {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dcd1ba;
+    border-radius: 6px;
+    padding: 0 14px;
+    background-color: #f7eedb; 
+    transition: border-color 0.2s;
+    gap: 12px;
+}
+
+.campo-input:focus-within {
+    border-color: #b36800;
+}
+
+.campo-input i {
+    color: #4a4a4a;
+    font-size: 1.05em;
+    flex-shrink: 0;
+}
+
+.campo-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 0;
+    font-size: 0.95em;
+    color: #1a1a1a;
+    font-family: inherit;
+}
+
+.campo-input input::placeholder {
+    color: #a39885;
+}
+
+/* ── Botão ── */
+.btn-enviar-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 13px;
+    background-color: #b46902; /* Tom caramelo escuro do botão original */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-enviar:hover {
+    background-color: #9a5800;
+}
+
+/* ── Link Voltar ── */
+.link-voltar {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.link-voltar a {
+    color: #b46902;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.link-voltar a:hover {
+    color: #9a5800;
+    text-decoration: underline;
+}
+
