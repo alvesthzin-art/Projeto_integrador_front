@@ -37,7 +37,9 @@ async function fazerLogin() {
             // Salva o token de teste e registra o horário inicial
             salvarSessao(USUARIO_TESTE.token);
             console.log('Login de teste efetuado com sucesso!');
-            window.location.href = '../tela_principal/principal.html';
+            
+            // 🛠️ CORRIGIDO: Mudado de principal.html para index.html
+            window.location.href = '../tela_principal/index.html';
             return;
         }
 
@@ -60,7 +62,7 @@ async function fazerLogin() {
         salvarSessao(data.token);
         
         console.log('Login via API efetuado com sucesso!');
-        window.location.href = '../tela_principal/principal.html';
+        window.location.href = '../tela_principal/index.html';
 
     } catch (error) {
         console.error('Erro na autenticação:', error);

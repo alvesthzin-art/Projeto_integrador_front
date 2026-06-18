@@ -12,11 +12,11 @@
     <header class="header">
         <div class="nav-left">
             <a href="catalogo.html" class="nav-link">
-                <i class="fas fa-book"></i>
+                <i class="fas fa-book-open"></i>
                 <span>Catálogo</span>
             </a>
         </div>
-        
+
         <div class="logo">
             <img src="https://res.cloudinary.com/dps7dz75i/image/upload/v1781273395/ChatGPT_Image_12_de_jun._de_2026_08_35_04_cl5vwt.png" alt="HoneyDukes">
         </div>
@@ -25,11 +25,13 @@
             <form action="/buscar" method="GET" class="pesquisa-form">
                 <div class="search-box">
                     <input type="text" placeholder="Buscar produtos..." name="pesquisa">
-                    <i class="fas fa-search search-icon"></i>
+                    <button type="submit" style="background: none; border: none; cursor: pointer;">
+                        <i class="fas fa-search search-icon"></i>
+                    </button>
                 </div>
             </form>
             <a href="../login_administrador/admin.html" class="admin-area">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user-circle"></i>
                 <span>Área do Administrador</span>
             </a>
         </div>
@@ -60,5 +62,3 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
