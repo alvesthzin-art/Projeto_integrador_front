@@ -302,18 +302,9 @@ body {
     padding: 0 30px;
     position: relative;
 }
-
-.footer-logo-box {
-    position: absolute;
-    left: 30px;
-    display: flex;
-    align-items: center;
-}
-
 .footer-logo-box img {
-    height: 32px;
+    height: 50px;
     width: auto;
-    filter: brightness(0.9);
 }
 
 .footer-text {
