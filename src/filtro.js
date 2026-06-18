@@ -19,7 +19,6 @@ async function carregarDoces(termoBusca = '') {
         
         const data = await response.json();
         
-        // Verifica se a estrutura de resposta existe
         if (!data || !data.response || !data.response.produto) {
             mostrarListaVazia(termoBusca);
             return;
@@ -27,27 +26,20 @@ async function carregarDoces(termoBusca = '') {
 
         let todosOsProdutos = data.response.produto;
 
-        // --- O SUPER FILTRO ---
         if (termoBusca) {
             const termo = termoBusca.toLowerCase();
             
             todosOsProdutos = todosOsProdutos.filter(doce => {
-                // 1. Procura no Nome
                 const matchNome = doce.nome && doce.nome.toLowerCase().includes(termo);
                 
-                // 2. Procura na Descrição
                 const matchDescricao = doce.descricao && doce.descricao.toLowerCase().includes(termo);
                 
-                // 3. Procura no Tipo do Produto (aceita tanto snake_case quanto camelCase do Back)
                 const nomeTipo = doce.tipo_produto?.tipo || doce.tipoProduto?.nome || '';
                 const matchTipo = nomeTipo.toLowerCase().includes(termo);
-                
-                // 4. Procura nas Categorias (se for um array de categorias)
-                const matchCategoria = doce.categorias && doce.categorias.some(cat => 
+                                const matchCategoria = doce.categorias && doce.categorias.some(cat => 
                     cat.nome.toLowerCase().includes(termo)
                 );
 
-                // Se a palavra pesquisada bater com QUALQUER uma das opções acima, o doce aparece!
                 return matchNome || matchDescricao || matchTipo || matchCategoria;
             });
         }
@@ -62,23 +54,26 @@ async function carregarDoces(termoBusca = '') {
 
         vitrine.innerHTML = '';
         
+        vitrine.innerHTML = '';
+        
         todosOsProdutos.forEach(doce => {
-            // Garante que vai pegar a URL da imagem, independente de como o Back-end envia (imagem_url ou imagemUrl)
-            const urlImagemOriginal = doce.imagem_url || doce.imagemUrl;
-            
-            // Pega o nome do Tipo do Produto (ex: 'chocolate', 'bebida', 'doce')
-            const tipoDoce = doce.tipo_produto?.tipo || doce.tipoProduto?.nome || 'Doce Mágico';
+
+            const tipoDoce = doce.tipo_produto?.tipo || doce.tipoProduto?.nome || doce.tipo || 'Doce Mágico';
+
+            const nomeDoce = doce.nome || 'Doce sem Nome';
+            const descricaoDoce = doce.descricao || 'Sem descrição cadastrada.';
 
             const card = document.createElement('div');
             card.classList.add('card-produto');
             
+           
             card.innerHTML = `
-                <img src="${urlImagemOriginal}" alt="${doce.nome}" onerror="this.src='./img/placeholder.png'">
+                <img src="../img/placeholder.png" alt="${nomeDoce}">
                 
-                <h3>${doce.nome}</h3>
+                <h3>${nomeDoce}</h3>
                 <span class="categoria" style="text-transform: capitalize;">${tipoDoce}</span>
-                <p>${doce.descricao}</p>
-                <button class="btn-detalhes" onclick="verDetalhes(${doce.id})">Ver detalhes</button>
+                <p>${descricaoDoce}</p>
+                <button class="btn-detalhes" onclick="verDetalhes(${doce.id || 0})">Ver detalhes</button>
             `;
             
             vitrine.appendChild(card);
