@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FDF0DB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* vertical */
+    align-items: center;     /* vertical */
+    padding-top: 10px;
+    outline: none;
+} 
+
+.logo-container{
+    margin-bottom: 20px;
+}
+
+.logo{
+    height: auto;
+    width: 550px;
+    display: block;
+    
+}
+
+.container-login {
+    width: 700px;
+    height: 500px;
+    background-color: #FDF0DB;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.30);
+    padding: 45px;
+}
+
+.container-login .titulo{
+    margin-left: 50px;
+    text-decoration: none;
+    
+    
+}
+
+.campo {
+    margin-bottom: 30px;
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 12px 15px;
+    border: 2px solid #e2c89f;
+    border-radius: 12px;
+    background: #faf4ea;
+    margin-bottom: 20px;
+}
+
+.campo input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    color: #6d5b4a;
+    margin-left: 25px;
+    
+}
+
+
+.novaSenha{
+   color: #B76E01;
+}
+
+.link-nova-senha{
+    text-decoration: none;
+    color: #B76E01;
+    font-size: 14px;
+}
+
+
+
