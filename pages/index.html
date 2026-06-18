@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Produto - Doceria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="pagina">
+
+    <aside class="menu-lateral">
+      <nav class="menu-lista">
+        <a href="#" class="menu-item">
+          <span class="menu-icone">📦</span> Produtos
+        </a>
+        <a href="#" class="menu-item menu-item--ativo">
+          <span class="menu-icone">➕</span> Adicionar produto
+        </a>
+      </nav>
+    </aside>
+
+    <main class="conteudo">
+
+      <header class="cabecalho">
+        <div class="cabecalho-titulo">
+          <button type="button" class="botao-voltar" title="Voltar">←</button>
+          <div>
+            <h1>Novo Produto</h1>
+            <p class="subtitulo">Preencha as informações do produto da doceria.</p>
+          </div>
+        </div>
+        <div class="usuario-logado">
+          <span class="usuario-icone">👤</span> Administrador <span class="seta">⌄</span>
+        </div>
+      </header>
+
+      <form id="form-novo-produto" class="cartao">
+
+        <div class="coluna coluna-campos">
+
+          <h2 class="secao-titulo">
+            <span class="secao-icone">⚙️</span> Informações do Produto
+          </h2>
+
+          <!-- nome -->
+          <div class="campo">
+            <label for="nome">Nome do Produto <span class="obrigatorio">*</span></label>
+            <input type="text" id="nome" name="nome"
+                   placeholder="Digite o nome do produto" required>
+          </div>
+
+          <!-- descricao -->
+          <div class="campo">
+            <label for="descricao">Descrição <span class="obrigatorio">*</span></label>
+            <textarea id="descricao" name="descricao" rows="3"
+                      placeholder="Descreva o produto" required></textarea>
+          </div>
+
+          <!-- id_tipo_produto: select PRÓPRIO, separado da Categoria.
+               É preenchido pela função carregarTiposProduto() (GET em /tipo-produto) -->
+          <div class="campo">
+            <label for="tipo_produto">Tipo de Produto <span class="obrigatorio">*</span></label>
+            <select id="tipo_produto" name="tipo_produto" required>
+              <option value="">Selecione o tipo de produto</option>
+            </select>
+          </div>
+
+          <!-- categoria (relação muitos-para-muitos): select múltiplo,
+               preenchido pela função carregarCategorias() (GET em /categoria) -->
+          <div class="campo">
+            <label for="categoria">Categoria <span class="obrigatorio">*</span></label>
+            <select id="categoria" name="categoria" multiple required>
+            </select>
+            <small class="dica">Segure Ctrl (ou Cmd no Mac) para selecionar mais de uma.</small>
+          </div>
+
+          <!-- id_tamanho -->
+          <div class="campo">
+            <label for="tamanho">Tamanho <span class="obrigatorio">*</span></label>
+            <select id="tamanho" name="tamanho" required>
+              <option value="">Selecione um tamanho</option>
+            </select>
+          </div>
+
+          <!-- quantidade_sabores -->
+          <div class="campo">
+            <label for="quantidade_sabores">Quantidade de Sabores <span class="obrigatorio">*</span></label>
+            <input type="number" id="quantidade_sabores" name="quantidade_sabores"
+                   placeholder="Ex.: 3" min="1" required>
+          </div>
+
+          <!-- quantidade_estoque -->
+          <div class="campo">
+            <label for="quantidade_estoque">Quantidade em Estoque <span class="obrigatorio">*</span></label>
+            <input type="number" id="quantidade_estoque" name="quantidade_estoque"
+                   placeholder="Ex.: 100" min="0" required>
+            <small class="dica">Informe a quantidade disponível em estoque.</small>
+          </div>
+
+          <!-- unidade_produto -->
+          <div class="campo">
+            <label for="unidade_produto">Unidade por Produto <span class="obrigatorio">*</span></label>
+            <input type="number" id="unidade_produto" name="unidade_produto"
+                   placeholder="Ex.: 1" min="1" required>
+            <small class="dica">Quantidade de unidades por embalagem/produto.</small>
+          </div>
+
+        </div>
+
+        <!-- Coluna da direita: imagem -->
+        <div class="coluna coluna-imagem">
+          <label>Imagem do Produto <span class="obrigatorio">*</span></label>
+
+          <div class="area-upload" id="area-upload">
+            <input type="file" id="imagem" name="imagem"
+                   accept=".png,.jpg,.jpeg,.webp" hidden>
+
+            <div class="upload-conteudo" id="upload-conteudo">
+              <span class="upload-icone">🖼️</span>
+              <p>Clique para selecionar uma imagem<br>ou arraste e solte aqui</p>
+              <small>PNG, JPG ou WEBP (máx. 5MB)</small>
+            </div>
+
+            <img id="preview-imagem" class="preview-imagem" hidden
+                 alt="Pré-visualização da imagem do produto">
+          </div>
+
+          <!-- imagem_url: preenchido automaticamente pelo JS após o upload
+               (em base64), ou colado manualmente como alternativa -->
+          
+        </div>
+
+        <div class="botoes-acao">
+          <button type="button" id="botao-cancelar" class="botao botao-secundario">Cancelar</button>
+          <button type="submit" class="botao botao-primario">Adicionar Produto</button>
+        </div>
+
+      </form>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

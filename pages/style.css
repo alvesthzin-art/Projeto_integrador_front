@@ -1,0 +1,260 @@
+/* =========================================================
+   RESET BÁSICO
+   Remove margens/padding padrão do navegador para começar
+   do zero e evitar comportamentos inesperados.
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #fdf6ec;
+    color: #2b2b2b;
+  }
+  
+  /* =========================================================
+     ESTRUTURA GERAL DA PÁGINA
+     "pagina" é um flex container: menu lateral + conteúdo
+  ========================================================= */
+  .pagina {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* =========================================================
+     MENU LATERAL (ESQUERDA)
+  ========================================================= */
+  .menu-lateral {
+    width: 240px;
+    background-color: #fbe2bd;
+    border-right: 3px solid #3b4cf0;
+    padding: 24px 16px;
+  }
+  
+  .menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #2b2b2b;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  .menu-item--ativo {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .menu-icone {
+    font-size: 18px;
+  }
+  
+  /* =========================================================
+     CONTEÚDO PRINCIPAL
+  ========================================================= */
+  .conteudo {
+    flex: 1;
+    padding: 32px 48px;
+  }
+  
+  /* ---------- Cabeçalho da página ---------- */
+  .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  
+  .cabecalho-titulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .botao-voltar {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .cabecalho h1 {
+    font-size: 26px;
+  }
+  
+  .subtitulo {
+    color: #6b6b6b;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  .usuario-logado {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  /* =========================================================
+     CARTÃO DO FORMULÁRIO
+     Usa CSS Grid: 2 colunas (campos | imagem) + 1 linha
+     para os botões, que ocupa as duas colunas.
+  ========================================================= */
+  .cartao {
+    background-color: #fffaf2;
+    border: 1px solid #e8ddc9;
+    border-radius: 10px;
+    padding: 32px;
+  
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+  }
+  
+  .secao-titulo {
+    font-size: 17px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* ---------- Campos do formulário (inputs, select, textarea) ---------- */
+  .campo {
+    margin-bottom: 18px;
+  }
+  
+  .campo label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .obrigatorio {
+    color: #d33;
+  }
+  
+  .campo input,
+  .campo select,
+  .campo textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #d8cdb8;
+    border-radius: 6px;
+    background-color: #fffefb;
+    color: #2b2b2b;
+  }
+  
+  .campo select[multiple] {
+    height: 130px;
+  }
+
+  .campo textarea {
+    resize: vertical;
+  }
+  
+  .dica {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #8a8a8a;
+  }
+  
+  /* ---------- Coluna da imagem ---------- */
+  .coluna-imagem label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .area-upload {
+    position: relative;
+    height: 220px;
+    border: 2px dashed #d8cdb8;
+    border-radius: 8px;
+    background-color: #fffefb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .upload-conteudo p {
+    font-size: 14px;
+    margin: 8px 0 4px;
+  }
+  
+  .upload-conteudo small {
+    font-size: 12px;
+    color: #8a8a8a;
+  }
+  
+  .upload-icone {
+    font-size: 32px;
+  }
+  
+  .preview-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* ---------- Botões de ação ---------- */
+  .botoes-acao {
+    grid-column: 1 / -1;       /* ocupa as duas colunas do grid */
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  
+  .botao {
+    padding: 10px 22px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  
+  .botao-secundario {
+    background-color: #fffefb;
+    border-color: #d8cdb8;
+    color: #2b2b2b;
+  }
+  
+  .botao-primario {
+    background-color: #b9701f;
+    color: #fff;
+  }
+  
+  .botao-primario:hover {
+    background-color: #a3611a;
+  }
+  
+  /* =========================================================
+     RESPONSIVO: em telas pequenas, o formulário vira 1 coluna
+  ========================================================= */
+  @media (max-width: 800px) {
+    .cartao {
+      grid-template-columns: 1fr;
+    }
+  }
