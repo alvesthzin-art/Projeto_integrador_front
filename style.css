@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 /* Reset total */
 * {
+=======
+/* ========================
+   RESET & BASE
+======================== */
+*, *::before, *::after {
+>>>>>>> telaPrincipal
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
 
+<<<<<<< HEAD
 body {
     width: 100%;
     height: 100vh;
@@ -19,10 +27,39 @@ body {
 }
 
 /* --- TOPO (HEADER) --- */
+=======
+:root {
+    --marrom-escuro:  #23120f;
+    --marrom-medio:   #3e2723;
+    --marrom-claro:   #8d6e63;
+    --dourado:        #c5b897;
+    --creme:          #f5edd6;
+    --creme-transparente: rgba(245, 237, 214, 0.45);
+    --borda:          rgba(197, 184, 151, 0.65);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://res.cloudinary.com/dps7dz75i/image/upload/v1781449554/Fundo_HoneyDukes_hk0iuv.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ========================
+   HEADER
+======================== */
+>>>>>>> telaPrincipal
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     padding: 15px 40px;
     width: 100%;
     height: 100px;
@@ -76,3 +113,270 @@ body {
     font-size: 15px;
     color: #3e2723;
 }
+=======
+    padding: 10px 40px;
+    width: 100%;
+    height: 95px;
+    flex-shrink: 0;
+}
+
+/* Navegação esquerda */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #3e2723;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #c5b897;
+}
+
+/* Logo central */
+.logo img {
+    height: 155px;
+    width: auto;
+    transform: translateY(8px);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+/* Direita: pesquisa + admin */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Barra de pesquisa */
+.pesquisa-form {
+    display: flex;
+    align-items: center;
+    background-color: var(--creme);
+    border: 1px solid var(--dourado);
+    border-radius: 20px;
+    padding: 4px 14px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.pesquisa-form:focus-within {
+    box-shadow: 0 0 0 2px rgba(197,184,151,0.5), inset 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.pesquisa-form input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    width: 190px;
+    color: var(--marrom-medio);
+    font-family: inherit;
+}
+
+.pesquisa-form input::placeholder {
+    color: var(--marrom-claro);
+}
+
+.pesquisa-form button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--marrom-medio);
+    transition: color 0.2s;
+}
+
+.pesquisa-form button:hover {
+    color: #c5b897;
+}
+
+/* Botão de administrador — clicável */
+.admin-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--marrom-medio);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    background-color: var(--creme);
+    border: 1px solid var(--dourado);
+    border-radius: 20px;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.admin-area:hover {
+    background-color: var(--marrom-medio);
+    color: var(--creme);
+    box-shadow: 0 3px 10px rgba(62,39,35,0.25);
+}
+
+.admin-area i {
+    font-size: 17px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    width: 100%;
+    padding: 6px 50px 10px;
+    min-height: 0;
+}
+
+/* HERO BANNER*/
+.hero-banner {
+    width: 1500px;
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-moldura {
+    background-color: var(--creme-transparente);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* DESTAQUES*/
+.destaques {
+    width: 100%;
+    max-width: 1150px;
+    text-align: center;
+}
+
+.destaques h2 {
+    font-size: 1.75em;
+    color: var(--marrom-medio);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+}
+
+.ornamento {
+    color: var(--dourado);
+}
+
+/* Grade de produtos */
+.produtos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* Card */
+.product-card {
+    background-color: var(--creme);
+    border: 1px solid var(--dourado);
+    border-radius: 12px;
+    width: 165px;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.13);
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .card-img-wrap img {
+    transform: scale(1.06);
+}
+
+.card-info {
+    padding: 9px 10px 11px;
+}
+
+.card-info h3 {
+    font-size: 0.95em;
+    color: var(--marrom-medio);
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.card-info p {
+    color: var(--marrom-claro);
+    font-size: 0.82em;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--marrom-escuro);
+    color: var(--creme);
+    height: 52px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+}
+.footer-logo-box img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.82em;
+}
+
+.footer-text p {
+    color: var(--creme);
+}
+
+.tagline {
+    margin-left: 12px;
+    color: var(--dourado);
+}
+
+>>>>>>> telaPrincipal
