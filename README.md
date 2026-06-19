@@ -63,10 +63,39 @@ Quando o administrador envia o formulário de um novo doce, o JavaScript interce
 
 ```
 
-👨‍💻 Desenvolvedor
+## 👨‍💻 Desenvolvedores
+
 <table style="border: none;">
-<tr>
-<td align="center">
-<a href="#">
-<img src="https://github.com/alvesthzin-art.png" width="100px;" alt="Avatar"/><br />
-<sub><b>@alvesthzin-art</b></sub>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/alvesthzin-art">
+        <img src="https://github.com/alvesthzin-art.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@alvesthzin-art</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/maxsz06">
+        <img src="https://github.com/maxsz06.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@maxsz06</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Dilansty">
+        <img src="https://github.com/Dilansty.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@Dilansty</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Bryalvz">
+        <img src="https://images.weserv.nl/?url=github.com/Bryalvz.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@Bryalvz</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/pedroday813-create">
+        <img src="https://github.com/pedroday813-create.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@pedroday813-create</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
