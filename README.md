@@ -86,9 +86,9 @@ Quando o administrador envia o formulário de um novo doce, o JavaScript interce
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Bryalvz">
-        <img src="https://images.weserv.nl/?url=github.com/Bryalvz.png" width="100px;" alt="Avatar"/><br />
-        <sub><b>@Bryalvz</b></sub>
+      <a href="https://github.com/Brayan717171">
+        <img src="https://images.weserv.nl/?url=github.com/Brayan717171.png" width="100px;" alt="Avatar"/><br />
+        <sub><b>@Brayan717171</b></sub>
       </a>
     </td>
     <td align="center">
