@@ -1,6 +1,14 @@
 async function carregarProdutosDestaque() {
     const gridProdutos = document.getElementById('produtos-grid');
-    const URL_API = 'http://localhost:8080/v1/senai/admin/produtos'; 
+    
+    // 🧙‍♂️ Configuração inteligente da URL:
+    // Se o site abrir em 'localhost' ou '127.0.0.1', usa a API local. 
+    // Caso contrário (no deploy), usa a URL definitiva do seu servidor na nuvem!
+    const usandoLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    const URL_API = usandoLocal 
+        ? 'http://localhost:8080/v1/senai/admin/produtos' 
+        : 'https://SUA-API-DO-DEPLOY.onrender.com/v1/senai/admin/produtos'; // <-- Quando fizer o deploy do back-end, mude apenas esse link!
 
     try {
         const response = await fetch(URL_API, {
@@ -17,7 +25,7 @@ async function carregarProdutosDestaque() {
         const dados = await response.json();
         console.log("Dados recebidos da API com sucesso:", dados);
 
-        // Ajustado exatamente para 'produto' (no singular) conforme o console do back-end!
+        // Acessa o array correto de produtos de forma segura
         const listaDeProdutos = dados.response && dados.response.produto ? dados.response.produto : [];
 
         gridProdutos.innerHTML = '';
@@ -27,17 +35,18 @@ async function carregarProdutosDestaque() {
             return;
         }
 
-        // Pega as primeiras 4 delícias para exibir em destaque
+        // Pega as primeiras 8 delícias para exibir em destaque no painel
         const produtosExibidos = listaDeProdutos.slice(0, 8);
 
         produtosExibidos.forEach(produto => {
-            // Mapeia os campos conforme retornados na resposta do console
             const imagem = produto.imagem || produto.imagem_url || produto.foto || 'https://via.placeholder.com/150';
+            
+            // Agora puxando o preco dinâmico que arrumamos no back-end!
             const preco = produto.preco || produto.valor || 0;
 
             const cardHTML = `
                 <div class="produto-card">
-                    <div class="produto-imagem-box">
+                    <div class="produto-imagem-box">    
                         <img src="${imagem}" alt="${produto.nome}" class="produto-img">
                     </div>
                     <div class="produto-info">
