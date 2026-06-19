@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/Imagem de fundo - HoneyDukes.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.topo {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 34px 72px 0;
+}
+
+.catalogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2f241a;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.catalogo i {
+    font-size: 29px;
+}
+
+/* Ajuste da logo em imagem no topo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 360px;
+    height: auto;
+    display: block;
+}
+
+.menuDireita {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+.barraPesquisa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 44px;
+    padding: 0 14px;
+    background-color: rgba(253, 240, 219, 0.7);
+    border: 2px solid #d7ae67;
+    border-radius: 22px;
+}
+
+.barraPesquisa input {
+    width: 170px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #3e2723;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.barraPesquisa button {
+    border: none;
+    background: transparent;
+    color: #3e2723;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.administrador {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #3e2723;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 0 72px;
+}
+
+.respostaFiltro {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.tituloGrande {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+}
+
+.tituloGrande h1 {
+    color: #2f241a;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.ornamento {
+    color: #b77912;
+    font-size: 42px;
+}
+
+.tituloPequeno h5 {
+    color: #6d5a43;
+    font-size: 21px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+/* Vitrine dinâmica */
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.card-produto {
+    background-color: rgba(253, 240, 219, 0.5);
+    border: 1px solid #e2cfb4;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-produto img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-produto h3 {
+    font-size: 18px;
+    color: #2f241a;
+    margin-top: 14px;
+}
+
+.card-produto .categoria {
+    font-size: 13px;
+    color: #7a6652;
+    margin: 4px 0 12px;
+    display: block;
+}
+
+.card-produto p {
+    font-size: 14px;
+    color: #5c4a37;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-detalhes {
+    background: transparent;
+    border: 1px solid #d7ae67;
+    border-radius: 6px;
+    padding: 6px 20px;
+    color: #2f241a;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0;
+}
+
+.btn-pag, .num-pag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e2cfb4;
+    background-color: rgba(253, 240, 219, 0.5);
+    border-radius: 6px;
+    color: #2f241a;
+    cursor: pointer;
+}
+
+.num-pag.ativa {
+    background-color: #e2cfb4;
+    font-weight: bold;
+}
+
+/* Rodapé Flexbox Consertado */
+footer {
+    width: 100%;
+    background-color: #2C1E0A;
+    padding: 0 72px;
+}
+
+.produtos {
+    height: 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logoRodape img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.centroBaixo p {
+    color: white;
+    font-size: 14px;
+}
+
+.abelha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.abelha img {
+    width: 40px;
+    height: auto;
+}
+
+.abelha p {
+    color: white;
+}
