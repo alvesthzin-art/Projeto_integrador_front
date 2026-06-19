@@ -7,7 +7,12 @@ const ENDPOINTS = {
   cadastrarProduto: `${API_BASE_URL}/produtos`,
 };
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsImlhdCI6MTc4MTc4OTc5NywiZXhwIjoxNzgxNzkzMzk3fQ.lcxpvYNDH8aTyzxAxBceEuCrku4QTbpIJUinHwpuXtQ";
+const token = localStorage.getItem('token_honeydukes');
+
+if (!token) {
+  alert('Sessão expirada ou não autenticado. Faça login novamente.');
+  window.location.href = '../login_administrador/admin.html';
+}
 
 const CLOUD_NAME    = "dlb0dkfbs";
 const UPLOAD_PRESET = "honeyduke_preset";
