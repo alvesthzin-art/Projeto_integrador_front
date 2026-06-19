@@ -1,9 +1,6 @@
 async function carregarProdutosDestaque() {
     const gridProdutos = document.getElementById('produtos-grid');
     
-    // 🧙‍♂️ Configuração inteligente da URL:
-    // Se o site abrir em 'localhost' ou '127.0.0.1', usa a API local. 
-    // Caso contrário (no deploy), usa a URL definitiva do seu servidor na nuvem!
     const usandoLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     
     const URL_API = usandoLocal 
