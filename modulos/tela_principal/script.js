@@ -37,12 +37,10 @@ async function carregarProdutosDestaque() {
 
         produtosExibidos.forEach(produto => {
             const imagem = produto.imagem || produto.imagem_url || produto.foto || 'https://via.placeholder.com/150';
-            
-            // Agora puxando o preco dinâmico que arrumamos no back-end!
             const preco = produto.preco || produto.valor || 0;
 
             const cardHTML = `
-                <div class="produto-card">
+                <a href="../../pages/produtos/produto.html?id=${produto.id}" class="produto-card" style="text-decoration: none; color: inherit;">
                     <div class="produto-imagem-box">    
                         <img src="${imagem}" alt="${produto.nome}" class="produto-img">
                     </div>
@@ -51,7 +49,7 @@ async function carregarProdutosDestaque() {
                         <p class="produto-descricao">${produto.descricao || 'Uma delícia direto de Hogsmeade.'}</p>
                         <span class="produto-preco">R$ ${parseFloat(preco).toFixed(2)}</span>
                     </div>
-                </div>
+                </a>
             `;
             gridProdutos.innerHTML += cardHTML;
         });

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Doceria</title>
+    
+    <link rel="stylesheet" href="./produtos.css">
+  </head>
+  <body>
+
+    <div class="pagina">
+
+      <aside class="menu-lateral">
+        <nav class="menu-lista">
+          <a href="produtos.html" class="menu-item menu-item--ativo">
+            <span class="menu-icone">📦</span> Produtos
+          </a>
+          <a href="../cadastrarProduto/index.html" class="menu-item menu-item--ativo">
+            <span class="menu-icone">➕</span> Adicionar produto
+          </a>
+        </nav>
+      </aside>
+
+      <main class="conteudo">
+
+        <header class="cabecalho">
+          <div class="cabecalho-titulo">
+            <div>
+              <h1>Produtos cadastrados</h1>
+              <p class="subtitulo">Gerencie os produtos da doceria.</p>
+            </div>
+          </div>
+          <div class="usuario-logado">
+            <span class="usuario-icone">👤</span> Administrador <span class="seta">⌄</span>
+          </div>
+        </header>
+
+        <div class="cartao cartao-tabela">
+
+          <div class="tabela-wrapper">
+            <table class="tabela-produtos">
+              <thead>
+                <tr>
+                  <th>Imagem</th>
+                  <th>Nome</th>
+                  <th>Categoria</th>
+                  <th>Tamanho</th>
+                  <th>Sabores</th>
+                  <th>Em estoque</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-produtos-corpo">
+                <!-- Preenchido dinamicamente pelo produtos.js -->
+                <tr>
+                  <td colspan="7" class="tabela-status">Carregando produtos...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Modal de confirmação de exclusão -->
+    <div id="modal-confirmar" class="modal-overlay" hidden>
+      <div class="modal-caixa">
+        <h3>Apagar produto?</h3>
+        <p id="modal-texto">Tem certeza que deseja apagar este produto? Essa ação não pode ser desfeita.</p>
+        <div class="modal-botoes">
+          <button type="button" id="modal-cancelar" class="botao botao-secundario">Cancelar</button>
+          <button type="button" id="modal-confirmar-apagar" class="botao botao-perigo">Apagar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de edição de produto -->
+    <div id="modal-editar" class="modal-overlay" hidden>
+      <div class="modal-caixa modal-caixa--editar">
+        <h3>Editar produto</h3>
+
+        <form id="form-editar-produto">
+
+          <input type="hidden" id="editar-id">
+
+          <div class="campo">
+            <label for="editar-nome">Nome do Produto <span class="obrigatorio">*</span></label>
+            <input type="text" id="editar-nome" name="nome" required>
+          </div>
+
+          <div class="campo">
+            <label for="editar-descricao">Descrição <span class="obrigatorio">*</span></label>
+            <textarea id="editar-descricao" name="descricao" rows="3" required></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="editar-tipo_produto">Tipo de Produto <span class="obrigatorio">*</span></label>
+            <select id="editar-tipo_produto" name="tipo_produto" required>
+              <option value="">Selecione o tipo de produto</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="editar-categoria">Categoria <span class="obrigatorio">*</span></label>
+            <select id="editar-categoria" name="categoria" multiple required></select>
+            <small class="dica">Segure Ctrl (ou Cmd no Mac) para selecionar mais de uma.</small>
+          </div>
+
+          <div class="campo">
+            <label for="editar-tamanho">Tamanho <span class="obrigatorio">*</span></label>
+            <select id="editar-tamanho" name="tamanho" required>
+              <option value="">Selecione um tamanho</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="editar-quantidade_sabores">Quantidade de Sabores <span class="obrigatorio">*</span></label>
+            <input type="number" id="editar-quantidade_sabores" name="quantidade_sabores" min="1" required>
+          </div>
+
+          <div class="campo">
+            <label for="editar-quantidade_estoque">Quantidade em Estoque <span class="obrigatorio">*</span></label>
+            <input type="number" id="editar-quantidade_estoque" name="quantidade_estoque" min="0" required>
+          </div>
+
+          <div class="campo">
+            <label for="editar-unidade_produto">Unidade por Produto <span class="obrigatorio">*</span></label>
+            <input type="number" id="editar-unidade_produto" name="unidade_produto" min="1" required>
+          </div>
+
+          <div class="campo">
+            <label for="editar-imagem_url">URL da Imagem</label>
+            <input type="text" id="editar-imagem_url" name="imagem_url" placeholder="https://...">
+          </div>
+
+          <div class="modal-botoes">
+            <button type="button" id="modal-editar-cancelar" class="botao botao-secundario">Cancelar</button>
+            <button type="submit" id="modal-editar-salvar" class="botao botao-primario">Salvar alterações</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <script src="./produtos.js"></script>
+  </body>
+  </html>

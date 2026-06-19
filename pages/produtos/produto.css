@@ -1,0 +1,371 @@
+    /* ── Tokens ─────────────────────────────────────────── */
+    :root {
+      --cream:      #F5EDD6;
+      --cream-dark: #EDD9A3;
+      --gold:       #C8912A;
+      --gold-light: #E8B84B;
+      --brown:      #2A1507;
+      --brown-mid:  #5C3317;
+      --chocolate:  #3D1C02;
+      --tag-bg:     #F0E0B0;
+      --tag-border: #D4A94A;
+      --white:      #FFF9EE;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Lato', system-ui, sans-serif;
+      --radius:       6px;
+    }
+
+    /* ── Reset ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background-color: var(--cream);
+      color: var(--brown);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── Header ─────────────────────────────────────────── */
+    main{
+        width: 100%;
+    
+    }
+    header {
+        
+        /* background-color: var(--cream-vanilla); */
+        /* border-bottom: 1px solid var(--cream-dark); */
+        padding: 0 40px;
+        width: 100%;
+        height: 16vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* position: sticky; */
+        top: 0;
+        z-index: 100;
+       
+      
+      }
+     
+      .header-esquerda {
+        flex:1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-body);
+        font-size: .9rem;
+        color: var(--chocolate);
+        text-decoration: none;
+      }
+      .header-esquerda svg { flex-shrink: 0; }
+    
+      .barra-pesquisa {
+       align-items: end;
+        display: flex;
+        align-items: center;
+        border: 1.5px solid var(--gold);
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--cream);
+        height: 38px;
+      }
+      .barra-pesquisa input {
+        border: none;
+        background: transparent;
+        padding: 0 14px;
+        font-size: .85rem;
+        color: var(--brown);
+        width: 180px;
+        outline: none;
+        font-family: var(--font-body);
+      }
+      .barra-pesquisa input::placeholder { color: #B09060; }
+      .barra-pesquisa button {
+        border: none;
+        background: transparent;
+        padding: 0 12px;
+        color: var(--chocolate);
+        height: 38px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo{
+        flex:1;
+        display: flex;
+        height: 20vh;
+        z-index: -999;
+    }
+    .box-logo{
+        flex: 1;
+    }
+    
+    .pesquisa-container{
+        width: 200px;
+        background-color: bisque;
+    }
+    
+      
+      .header-direita {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        width: 389px;
+      }
+      
+    
+      .admin-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: .85rem;
+        color: var(--chocolate);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    
+      /* ── Breadcrumb ─────────────────────────────────────── */
+      .breadcrumb {
+        display: flex;
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 16px 24px 0;
+      }
+      .breadcrumb a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: .85rem;
+        color: var(--gold);
+        text-decoration: none;
+        transition: color .15s;
+      }
+      .breadcrumb a:hover { color: var(--brown-mid); }
+    
+
+    /* ── Main layout ────────────────────────────────────── */
+    body {
+      background-color: #000000d9;
+      background-image: url('https://res.cloudinary.com/dps7dz75i/image/upload/v1781186854/ChatGPT_Image_11_de_jun._de_2026_10_51_19_mnizmp.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;  /* ← Adicione isto */
+      color: var(--brown);
+      font-family: var(--font-body);
+    justify-content: space-between;
+  }
+
+  main > article {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 24px 24px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      background: rgba(245, 237, 214, 0.103);  /* ← Adicione fundo semi-transparente */
+      border-radius: 12px;
+  }
+
+    /* ── Gallery ────────────────────────────────────────── */
+    .gallery { display: flex; flex-direction: column; gap: 14px; }
+
+    .gallery-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--brown);
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .gallery-main img:hover { transform: scale(1.02); }
+
+    .gallery-thumbs {
+      display: flex;
+      gap: 10px;
+    }
+    .gallery-thumbs button {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      overflow: hidden;
+      width: calc(100% / 6 - 9px);
+      aspect-ratio: 1;
+      background: var(--brown);
+      padding: 0;
+      transition: border-color .2s;
+      flex-shrink: 0;
+    }
+    .gallery-thumbs button.active { border-color: var(--gold); }
+    .gallery-thumbs button:hover { border-color: var(--gold-light); }
+    .gallery-thumbs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Product info ───────────────────────────────────── */
+    .product-info { display: flex; flex-direction: column; gap: 18px; }
+
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      line-height: 1.15;
+    }
+
+    .product-subtitle {
+      text-align: center;
+      font-size: .85rem;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .divider-ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: .25em;
+      opacity: .7;
+    }
+
+    .product-desc {
+      font-size: .95rem;
+      color: var(--brown-mid);
+      line-height: 1.6;
+    }
+
+    /* ── Meta grid ──────────────────────────────────────── */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 14px;
+    }
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .meta-label {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--brown);
+      min-width: 90px;
+    }
+    .meta-value {
+      font-size: .9rem;
+      color: var(--brown-mid);
+    }
+
+    /* Size buttons */
+    .size-options { display: flex; gap: 8px; }
+    .size-btn {
+      border: 1.5px solid var(--tag-border);
+      background: var(--tag-bg);
+      color: var(--brown-mid);
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .size-btn.active,
+    .size-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+
+    /* Flavor tags */
+    .flavor-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .flavor-tag {
+      border: 1.5px solid var(--tag-border);
+      background: var(--tag-bg);
+      color: var(--brown-mid);
+      font-size: .8rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── Ingredients ────────────────────────────────────── */
+    .ingredients-section { border-top: 1px solid var(--cream-dark); padding-top: 16px; }
+    .ingredients-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+    .ingredients-text {
+      font-size: .88rem;
+      color: var(--brown-mid);
+      line-height: 1.65;
+    }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    .logo-footer{
+        display: flex;
+        height: 5vh;;
+     }
+     footer {
+        background: var(--chocolate);
+        color: rgba(255,249,238,.55);
+        padding: 10px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: .8rem;
+        width: 100%;
+      }
+      .footer-logo {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--gold-light);
+      }
+      .footer-tagline {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: rgba(255,249,238,.55);
+      }
+      .bee{
+        display: flex;
+        width: 18px;
+        height: 18px;
+      }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (max-width: 780px) {
+      header { padding: 0 16px; }
+      .logo { font-size: 1.5rem; }
+      main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 16px 16px 40px;
+      }
+      .search-bar input { width: 120px; }
+      footer { padding: 14px 16px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  

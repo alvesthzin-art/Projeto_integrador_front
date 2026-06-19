@@ -1,0 +1,400 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5e6cc;
+  color: #3d2a0f;
+  min-height: 100vh;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
+.pagina {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===========================
+   MENU LATERAL
+=========================== */
+.menu-lateral {
+  width: 180px;
+  background-color: #f5e6cc;
+  border-right: 1px solid #e0c99a;
+  padding: 16px 10px;
+  flex-shrink: 0;
+}
+
+.menu-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #5a3e1b;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.menu-item:hover {
+  background-color: #e8d4a8;
+}
+
+.menu-item--ativo {
+  background-color: #e8d4a8;
+  font-weight: 600;
+}
+
+.menu-icone {
+  font-size: 16px;
+}
+
+/* ===========================
+   CONTEÚDO PRINCIPAL
+=========================== */
+.conteudo {
+  flex: 1;
+  padding: 20px 24px;
+  overflow: auto;
+}
+
+/* ===========================
+   CABEÇALHO
+=========================== */
+.cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cabecalho h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3d2a0f;
+  margin-bottom: 2px;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #7a5c38;
+}
+
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #5a3e1b;
+  background-color: #eeddbf;
+  border: 1px solid #e0c99a;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.usuario-icone {
+  font-size: 16px;
+}
+
+.seta {
+  font-size: 14px;
+  color: #8a6a40;
+}
+
+/* ===========================
+   CARTÃO / TABELA
+=========================== */
+.cartao {
+  background-color: #fff9f0;
+  border: 1px solid #e0c99a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+}
+
+.tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* Cabeçalho da tabela */
+.tabela-produtos thead tr {
+  background-color: #f0ddb0;
+}
+
+.tabela-produtos th {
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #5a3e1b;
+  border-bottom: 1px solid #e0c99a;
+  white-space: nowrap;
+}
+
+/* Células */
+.tabela-produtos td {
+  padding: 8px 12px;
+  text-align: center;
+  color: #3d2a0f;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0e4c8;
+}
+
+.tabela-produtos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-produtos tbody tr:hover {
+  background-color: #fef5e0;
+  transition: background 0.1s;
+}
+
+/* Imagem do produto */
+.tabela-produtos td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #e0c99a;
+}
+
+/* Estoque em destaque */
+.tabela-produtos td.estoque-quantidade {
+  font-weight: 700;
+  color: #2d7a2d;
+}
+
+/* Estado de carregamento */
+.tabela-status {
+  padding: 24px;
+  color: #8a6a40;
+  font-style: italic;
+}
+
+/* ===========================
+   BOTÕES DE AÇÃO (tabela)
+=========================== */
+.acoes-celula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.botao-editar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fff3cd;
+  border: 1px solid #f0c040;
+  border-radius: 6px;
+  color: #b07d00;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.botao-editar:hover {
+  background-color: #ffe8a0;
+}
+
+.botao-apagar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffe0e0;
+  border: 1px solid #f08080;
+  border-radius: 6px;
+  color: #c0392b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.botao-apagar:hover {
+  background-color: #ffc0c0;
+}
+
+/* ===========================
+   BOTÕES GERAIS
+=========================== */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.botao-primario {
+  background-color: #c97a2b;
+  border-color: #b06820;
+  color: #fff;
+}
+
+.botao-primario:hover {
+  background-color: #b06820;
+}
+
+.botao-secundario {
+  background-color: #eeddbf;
+  border-color: #e0c99a;
+  color: #5a3e1b;
+}
+
+.botao-secundario:hover {
+  background-color: #e8d4a8;
+}
+
+.botao-perigo {
+  background-color: #e74c3c;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+.botao-perigo:hover {
+  background-color: #c0392b;
+}
+
+/* ===========================
+   MODAIS
+=========================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(61, 42, 15, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-caixa {
+  background-color: #fff9f0;
+  border: 1px solid #e0c99a;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal-caixa--editar {
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-caixa h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #3d2a0f;
+  margin-bottom: 8px;
+}
+
+.modal-caixa p {
+  font-size: 14px;
+  color: #7a5c38;
+  margin-bottom: 20px;
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ===========================
+   FORMULÁRIO (modal edição)
+=========================== */
+.campo {
+  margin-bottom: 14px;
+}
+
+.campo label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5a3e1b;
+  margin-bottom: 4px;
+}
+
+.campo input[type="text"],
+.campo input[type="number"],
+.campo textarea,
+.campo select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #3d2a0f;
+  background-color: #fffdf8;
+  border: 1px solid #e0c99a;
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: #c97a2b;
+  box-shadow: 0 0 0 3px rgba(201, 122, 43, 0.18);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.campo select[multiple] {
+  min-height: 90px;
+}
+
+.obrigatorio {
+  color: #c0392b;
+}
+
+.dica {
+  font-size: 11px;
+  color: #8a6a40;
+  margin-top: 3px;
+  display: block;
+}
